@@ -2,7 +2,7 @@ import fileworks.DataImport;
 
 import java.util.Scanner;
 
-public class H_050925_01 {
+public class H_250909_V_01 {
     public static void main(String[] args) {
         DataImport dataImport = new DataImport("randomtext.txt");
 

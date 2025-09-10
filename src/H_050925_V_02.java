@@ -1,6 +1,6 @@
 import fileworks.DataExport;
 
-public class H_050925_02 {
+public class H_050925_V_02 {
     public static void main(String[] args) {
         DataExport dataExport = new DataExport("output.txt");
 
