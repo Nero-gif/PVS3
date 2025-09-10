@@ -20,7 +20,7 @@ public class H_050925_01 {
 
         while(dataImport.hasNext()){
             line = dataImport.readLine();
-            System.out.println(line);
+            System.out.println("ni**a" + line);
         }
     }
 }
