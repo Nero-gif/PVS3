@@ -1,7 +1,5 @@
 import fileworks.DataImport;
 
-import java.util.ArrayList;
-
 public class H_251009_B_01 {
     public static void main(String[] args) {
         //nacti soubor
