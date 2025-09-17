@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class H_250917_B_01 {
     public static void main(String[] args) {
         //zkus nacist soubor
-        DataImport di = new DataImport("countries.txt");
+        DataImport di = new DataImport("./testdata/countries.txt");
         // di.printFile();
 //        System.out.println("Prvni zeme:");
 /*        String countryData = di.readLine();
