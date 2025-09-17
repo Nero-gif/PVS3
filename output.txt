@@ -1,1 +1,0 @@
-ahoj, tohle je první line output souboru hahaha
