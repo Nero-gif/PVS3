@@ -1,4 +1,4 @@
-package oop.inheritance;
+package oop.inheritance.hunting;
 
 import java.util.ArrayList;
 import java.util.Random;

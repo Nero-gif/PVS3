@@ -1,4 +1,4 @@
-package oop.inheritance;
+package oop.inheritance.hunting;
 
 public class Witcher extends Soldier{
     public Witcher(String name) {

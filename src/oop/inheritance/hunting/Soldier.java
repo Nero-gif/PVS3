@@ -1,4 +1,4 @@
-package oop.inheritance;
+package oop.inheritance.hunting;
 
 public class Soldier extends Hunter {
 
