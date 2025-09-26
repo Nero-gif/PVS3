@@ -27,12 +27,12 @@ public class HuntingSeason {
         }
     }
 
-    static void doJob(Hunter hunter, String role, String pismeno){
-        if (pismeno.equals("M")) {
+    static void doJob(Hunter hunter, String pismeno){
+        if (pismeno.equals("M") && hunter instanceof Witcher) {
             ((Witcher) hunter).slayMonster();
             return;
         }
-        if (pismeno.equals("K")) {
+        if (pismeno.equals("K") && hunter instanceof Soldier) {
             ((Soldier) hunter).killBandits();
             return;
         }
@@ -44,7 +44,29 @@ public class HuntingSeason {
 
     public static void main(String[] args) {
 
-        DataImport di = new DataImport("hunters.txt");
+        DataImport di = new DataImport("../../../testdata/hunters.txt");
+
+        Hunter hunter1 = null;
+
+        while (di.hasNext()){
+            String line = di.readLine();
+            String[] parts = line.split(",");
+
+            if (parts[1].equals("Hunter")){
+                hunter1 = new Hunter(parts[0]);
+
+            } else if (parts[1].equals("Soldier")) {
+                hunter1 = new Soldier(parts[0]);
+
+            } else if (parts[1].equals("Witcher")){
+                hunter1 = new Witcher(parts[0]);
+
+            }
+            for (int i = 2; i < parts.length; i++){
+                doJob(hunter1, parts[i]);
+            }
+            System.out.println(hunter1.name + "get" + hunter1.gold);
+        }
 //        Hunter hunter = new Hunter("Theodore Roosvelt");
 //        hunter.hunt();
 //
