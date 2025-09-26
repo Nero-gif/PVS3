@@ -1,5 +1,7 @@
 package oop.inheritance.hunting;
 
+import fileworks.DataImport;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -13,17 +15,36 @@ public class HuntingSeason {
                 hunter.hunt();
                 break;
             case 2:
-                ((Soldier) hunter).killBandits();
+                if (hunter instanceof Soldier) {
+                    ((Soldier) hunter).killBandits();
+                }
                 break;
             case 3:
-                ((Witcher) hunter).slayMonster();
+                if (hunter instanceof Witcher) {
+                    ((Witcher) hunter).slayMonster();
+                }
                 break;
         }
     }
 
+    static void doJob(Hunter hunter, String role, String pismeno){
+        if (pismeno.equals("M")) {
+            ((Witcher) hunter).slayMonster();
+            return;
+        }
+        if (pismeno.equals("K")) {
+            ((Soldier) hunter).killBandits();
+            return;
+        }
+        if (pismeno.equals("H")) {
+            hunter.hunt();
+        }
+    }
 
 
     public static void main(String[] args) {
+
+        DataImport di = new DataImport("hunters.txt");
 //        Hunter hunter = new Hunter("Theodore Roosvelt");
 //        hunter.hunt();
 //
