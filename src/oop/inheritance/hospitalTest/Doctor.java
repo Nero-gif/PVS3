@@ -4,13 +4,14 @@ public class Doctor {
     String name;
     int salary;
 
-    public Doctor(String name, int salary) {
+    public Doctor(String name) {
         this.name = name;
-        this.salary = salary;
+        salary = 25000;
     }
 
     void diagnose(){
         System.out.println("Figuring out what's wrong...");
+        salary += 10000;
     }
 
     @Override

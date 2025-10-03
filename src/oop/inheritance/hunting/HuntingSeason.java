@@ -44,7 +44,7 @@ public class HuntingSeason {
 
     public static void main(String[] args) {
 
-        DataImport di = new DataImport("../../../testdata/hunters.txt");
+        DataImport di = new DataImport("./testdata/hunters.txt");
 
         Hunter hunter1 = null;
 
