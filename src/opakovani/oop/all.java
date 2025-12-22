@@ -14,12 +14,10 @@ public class all {
         System.out.println("Kolik má mít soubor řádek?");
         int nubberOfLines = sc.nextInt();
         for (int i = 0; i < nubberOfLines; i++) {
-            String line = "";
-            for (int j = 0; j < 3; j++) {
-                line = line + rand.nextInt(0, 99) + ";";
-            }
-            line = line + rand.nextInt(0, 99);
-            de.writeLine(line);
+            StringBuilder line = new StringBuilder();
+            for (int j = 0; j < 3; j++) line.append(rand.nextInt(0, 99)).append(";");
+            line.append(rand.nextInt(0, 99));
+            de.writeLine(line.toString());
         }
 
         de.finishExport();
