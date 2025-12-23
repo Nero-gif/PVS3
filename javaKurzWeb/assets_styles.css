@@ -1,0 +1,62 @@
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --accent:#0b66c3; --muted:#666;
+  --max-width:1100px;
+  font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#222}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+.site-header{background:linear-gradient(90deg, #0b66c3 0%, #1b9bd7 100%);color:#fff;padding:1.2rem 0;margin-bottom:1rem}
+.site-header h1{margin:0;font-size:1.4rem}
+.site-header .subtitle{margin:0.2rem 0 0;font-size:0.95rem;opacity:0.95}
+
+main{display:flex;gap:1rem;padding-bottom:2rem}
+.sidebar{width:290px;flex:0 0 290px}
+.content{flex:1;min-height:60vh}
+.lessons-list{margin-top:0.8rem;background:var(--card);padding:0.6rem;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.lesson-item{padding:0.7rem;border-radius:6px;cursor:pointer;display:block;color:inherit;text-decoration:none;margin-bottom:0.4rem}
+.lesson-item:hover{background:#f0f7ff}
+.lesson-title{font-weight:600}
+.lesson-meta{font-size:0.85rem;color:var(--muted);margin-top:0.25rem}
+
+.search-wrapper{margin-bottom:0.6rem}
+#search{width:100%;padding:0.6rem;border-radius:6px;border:1px solid #e3e6ea}
+
+.content article{background:var(--card);padding:1.1rem;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.content h2{margin-top:0}
+
+/* --- Kód: přesné odřádkování, žádné automatické zalamování --- */
+/* white-space: pre zachová přesný formát (newlines a mezery), overflow:auto poskytne horizontální scroll */
+pre.code, .code {
+  white-space: pre;        /* zachová přesné řádky a mezery */
+  overflow: auto;          /* zobrazí scroll kdykoliv řádek přesahuje šířku */
+  background:#0d1117;
+  color:#c9d1d9;
+  padding:0.9rem;
+  border-radius:6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size:0.9rem;
+  line-height:1.45;
+  tab-size:4;
+  -moz-tab-size:4;
+  max-width:100%;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Pokud chceš, aby se dlouhé řádky nezalamovaly, necháme overflow:auto. */
+/* Pozn.: pokud chceš zároveň zalamovat dlouhé tokeny, použij white-space: pre-wrap; a word-break: break-word; */
+
+/* estetika inline code uvnitř textu */
+code.inline { background:#eef6ff; padding:0.15rem 0.3rem; border-radius:4px; font-family:inherit; font-size:0.9rem; }
+
+.exercise{border-left:4px solid #ffd166;background:#fff7e6;padding:0.8rem;border-radius:4px;margin:0.6rem 0}
+.repo-links{margin-top:0.8rem;font-size:0.9rem}
+.repo-links a{display:block;color:var(--accent);text-decoration:none;margin-bottom:0.4rem}
+
+.site-footer{padding:1rem 0;text-align:center;color:var(--muted);font-size:0.9rem}
+@media (max-width:900px){
+  main{flex-direction:column}
+  .sidebar{width:100%}
+}
