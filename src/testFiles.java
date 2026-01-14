@@ -23,5 +23,6 @@ public class testFiles {
         System.out.println("Sentences: " + sentences);
 
         br.close();
+
     }
 }
