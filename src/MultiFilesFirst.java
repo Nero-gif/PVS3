@@ -18,18 +18,16 @@ public class MultiFilesFirst {
             String worstName = "";
 
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
-
-
                 String[] marks = line.split(";");
                 int soucet = 0;
+
                 for (int i = 1; i < marks.length; i++) {
                     soucet += Integer.parseInt(marks[i]);
                 }
+
                 double average;
                 average = (double) soucet / (marks.length - 1);
                 String write = marks[0] + ";" + average;
-                System.out.println(write);
                 fw.write(write + '\n');
 
                 if (bestAverage > average){
