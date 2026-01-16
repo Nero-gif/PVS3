@@ -48,8 +48,6 @@ public class MultiFilesFirst {
 
             br.close();
             fw.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
