@@ -28,6 +28,9 @@ public class pinsFolderIDK {
             
             validUsernames = Files.readAllLines(Path.of(dirPath, "usernames.txt"));
             validPins = Files.readAllLines(Path.of(dirPath, "AllPINs.txt"));
+            // očisti případné mezery/CRLF artefakty
+            validUsernames.replaceAll(s -> s.trim());
+            validPins.replaceAll(s -> s.trim());
 
             
             for (int i = 1; i <= 5; i++) {
@@ -35,16 +38,21 @@ public class pinsFolderIDK {
                 if (Files.exists(attemptPath)) {
                     List<String> lines = Files.readAllLines(attemptPath);
                     for (String line : lines) {
-                        totalAttempts++;
-                        
-                        String[] parts = line.split("\\s+");
-                        if (parts.length >= 2) {
-                            String user = parts[0];
-                            String pin = parts[1];
+                        if (line == null || line.isBlank()) {
+                            continue;
+                        }
 
-                            
+                        // počítáme jen neprázdné řádky
+                        totalAttempts++;
+
+                        String[] parts = line.split("=");
+                        if (parts.length >= 2) {
+                            String user = parts[0].trim();
+                            String pin = parts[1].trim();
+
+
                             int userIdx = validUsernames.indexOf(user);
-                            if (userIdx != -1 && validPins.get(userIdx).equals(pin)) {
+                            if (userIdx != -1 && userIdx < validPins.size() && validPins.get(userIdx).equals(pin)) {
                                 okCount++;
                                 okAttempts.add(line);
                             }
