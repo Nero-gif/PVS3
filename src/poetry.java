@@ -24,13 +24,13 @@ public class poetry {
                     poems.add(file.getName() + ";" + sb.toString());
                 };
             }
-//            poems.sort((a, b) -> {
-//                int ai = a.indexOf(';');
-//                int bi = b.indexOf(';');
-//                int alen = ai >= 0 ? a.length() - (ai + 1) : 0;
-//                int blen = bi >= 0 ? b.length() - (bi + 1) : 0;
-//                return Integer.compare(blen, alen);
-//            });
+            poems.sort((a, b) -> {
+                int ai = a.indexOf(';');
+                int bi = b.indexOf(';');
+                int alen = ai >= 0 ? a.length() - (ai + 1) : 0;
+                int blen = bi >= 0 ? b.length() - (bi + 1) : 0;
+                return Integer.compare(alen, blen);
+            });
             for (int i = 0; i < poems.size(); i++) {
                 System.out.println(poems.get(i));
             }
