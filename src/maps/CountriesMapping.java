@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
@@ -31,9 +32,9 @@ public class CountriesMapping {
             Map<String, Long> countByContinent = countries.stream()
                     .collect(Collectors.groupingBy(Country::getContinent, Collectors.counting()));
 
-            for (String continent : countByContinent.keySet()) {
-                System.out.println(continent + " --- " + countByContinent.get(continent));
-            }
+//            for (String continent : countByContinent.keySet()) {
+//                System.out.println(continent + " --- " + countByContinent.get(continent));
+//            }
 
             // vsechny staty v kontinentu
             Map<String, List<Country>> countriesByContinent = countries.stream()
@@ -45,32 +46,46 @@ public class CountriesMapping {
             // Europe
             // --- Slovakia
 
-            for (String continent : countByContinent.keySet()) {
-                System.out.println(continent + ":");
-                for (Country country : countriesByContinent.get(continent)){
-                    System.out.println("--- " + country.getName());
-                }
-            }
+//            for (String continent : countByContinent.keySet()) {
+//                System.out.println(continent + ":");
+//                for (Country country : countriesByContinent.get(continent)){
+//                    System.out.println("--- " + country.getName());
+//                }
+//            }
 
             // populace na continent
             Map<String, Long> populationByContinent = countries.stream()
                     .collect(Collectors.groupingBy(Country::getContinent, Collectors.summingLong(Country::getPopulation)));
 
-            for (String continent : populationByContinent.keySet()) {
-                System.out.println(continent + " --- " + populationByContinent.get(continent));
-            }
+//            for (String continent : populationByContinent.keySet()) {
+//                System.out.println(continent + " --- " + populationByContinent.get(continent));
+//            }
 
             // průměrný věk dožití podle kontinentu
             Map<String, Double> avgLifeExpectancyByContinent = countries.stream()
                     .collect(Collectors.groupingBy(Country::getContinent, Collectors.averagingDouble(Country::getLifeExpectancy)));
 
-            for (String continent : avgLifeExpectancyByContinent.keySet()) {
-                System.out.println(continent + " --- " + avgLifeExpectancyByContinent.get(continent));
-            }
+//            for (String continent : avgLifeExpectancyByContinent.keySet()) {
+//                System.out.println(continent + " --- " + avgLifeExpectancyByContinent.get(continent));
+//            }
+            
+//            Optional<Map.Entry<String, Double>> MAXaverageLifeExpectancy = countries.stream()
+//                    .collect(Collectors.groupingBy(Country::getContinent, Collectors.averagingDouble(Country::getLifeExpectancy)))
+//                    .entrySet()
+//                    .stream()
+//                    .max(Map.Entry.comparingByValue());
+//            System.out.println(MAXaverageLifeExpectancy);
+
+            String MAXaverageLifeExpectancyOfContinent = countries.stream()
+                    
+            
 
         } catch (IOException e) {
             System.err.println("Something went wrong :-C");
         }
+    }
+    public int compare(Country o1, Country o2){
+        return Long.compare(o1.getPopulation(), o2.getPopulation());
     }
 }
 
@@ -102,7 +117,7 @@ class Country {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name; 
     }
 
     public String getContinent() {
