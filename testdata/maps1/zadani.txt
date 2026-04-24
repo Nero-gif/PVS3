@@ -1,0 +1,18 @@
+Zadání
+0) Vytoøit tøídu TestResult, která reprezentuje vstupní soubor (scores.csv) - jednotlivé atributy jsou první øádek z csv souboru
+
+1) Naèíst vstupní data
+
+2) Pomocí stream/map zjistit (=vypsat do konzole):
+ 
+a) Kolik žákù je zapsáno u každého pøedmìtu
+
+b) poèet unikátních studentù
+
+c) Kolik % studentù prošlo biologií a IT - na prùchod musí mít z obou 70 bodù
+
+d) prùmìrnou známku z každého pøedmìtu
+
+e) vytvoøit mapu pøedmìtù se studenty se skorem alespon 80
+
+f) Kolik každý student strávil celkem èasu psaním testù

@@ -76,7 +76,7 @@ public class CountriesMapping {
 //                    .max(Map.Entry.comparingByValue());
 //            System.out.println(MAXaverageLifeExpectancy);
 
-            String MAXaverageLifeExpectancyOfContinent = countries.stream()
+//            String MAXaverageLifeExpectancyOfContinent = countries.stream();
                     
             
 
