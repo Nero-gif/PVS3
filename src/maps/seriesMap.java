@@ -28,6 +28,11 @@ public class seriesMap {
                         .filter(s -> s.getCode().equals(ep.getCode()))
                         .findFirst()
                         .orElseThrow(() -> new RuntimeException("Series not found for episode code: " + ep.getCode()))));
+
+        for(Series s : seriesMap.keySet()){
+            System.out.println(s.getName() + " " + s.getCode());
+            seriesMap.get(s).forEach(episode -> System.out.println("\t" + episode));
+        }
     }
 }
 
