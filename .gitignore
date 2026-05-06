@@ -27,3 +27,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+
+
+
+#mrdky
+testdata/movies_db/ratings.csv
